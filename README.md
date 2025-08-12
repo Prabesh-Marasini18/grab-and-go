@@ -38,9 +38,6 @@ Built with JSP, Servlets, and MySQL, it features:
 ![WhatsApp Image 2025-04-20 at 11 57 22_e73e1b40](https://github.com/user-attachments/assets/39a5f563-7b35-4dbf-90d8-a6b6a21db26a)
 
 
----
-
-![WhatsApp Image 2025-05-05 at 23 10 30_b025b00e](https://github.com/user-attachments/assets/7d91d741-4f65-4deb-9c4e-50677e3d9cf1)
 
 
 
