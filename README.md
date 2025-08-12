@@ -61,7 +61,7 @@ GrabAndGo/
 
 ### Prerequisites
 - Java JDK 8 or higher  
-- Apache Tomcat 9 or higher  
+- Apache Tomcat 8.5 or higher  
 - MySQL database
 
 ### Installation
