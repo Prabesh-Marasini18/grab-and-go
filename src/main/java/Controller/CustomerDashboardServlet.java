@@ -15,9 +15,9 @@ public class CustomerDashboardServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         FoodDAO foodDAO = new FoodDAO();
-        Map<String, List<Food>> categorizedFoods = new LinkedHashMap<>(); // keep order
+        Map<String, List<Food>> categorizedFoods = new LinkedHashMap<>(); 
         
-        // Define categories you want to show
+       
         String[] categories = {"Main Course", "Dessert", "Appetizer", "Beverage", "Salad", "Soup"};
         
         try {
@@ -29,13 +29,13 @@ public class CustomerDashboardServlet extends HttpServlet {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            // Optional: you can set an error message here and forward to an error page
+            
         }
         
-        // Set the map as request attribute
+       
         request.setAttribute("categorizedFoods", categorizedFoods);
         
-        // Forward to your JSP
+       
         request.getRequestDispatcher("customer-dashboard.jsp").forward(request, response);
     }
 }

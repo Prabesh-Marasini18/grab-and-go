@@ -26,29 +26,28 @@
         for (Map.Entry<String, List<Food>> entry : categorizedFoods.entrySet()) {
             String category = entry.getKey();
             List<Food> items = entry.getValue();
-            if (!items.isEmpty()) {
+            if (items != null && !items.isEmpty()) {
 %>
 <section class="featured-menu">
     <h2 class="section-title"><%= category %></h2>
     <div class="menu-grid">
         <%
-    int count = 0;
-    for (Food food : items) {
-        if (count >= 3) break;
-        count++;
-%>
-<a href="FoodDetailsServlet?foodId=<%= food.getFoodId() %>" class="menu-item">
-	<div class="menu-content">
-        <img src="<%= food.getImagePath() %>" alt="<%= food.getFoodName() %>">
-        <h3><%= food.getFoodName() %></h3>
-        <p><%= food.getFoodDescription() %></p>
-    </div>
-    <span class="price">$<%= food.getFoodPrice() %></span>
-   
-</a>
-<%
-    }
-%>
+            int count = 0;
+            for (Food food : items) {
+                if (count >= 3) break;
+                count++;
+        %>
+        <a href="FoodDetailsServlet?foodId=<%= food.getFoodId() %>" class="menu-item">
+            <div class="menu-content">
+                <img src="<%= request.getContextPath() + "/" + food.getImagePath() %>" alt="<%= food.getFoodName() %>">
+                <h3><%= food.getFoodName() %></h3>
+                <p><%= food.getFoodDescription() %></p>
+            </div>
+            <span class="price">$<%= food.getFoodPrice() %></span>
+        </a>
+        <%
+            }
+        %>
     </div>
 </section>
 <%
@@ -60,6 +59,7 @@
 <%
     }
 %>
+
 <%@ include file="footer.jsp" %>
 </body>
 </html>

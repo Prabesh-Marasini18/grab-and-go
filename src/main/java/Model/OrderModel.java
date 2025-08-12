@@ -10,11 +10,11 @@ public class OrderModel {
     private double orderPrice;
     private String paymentStatus;
 
-    // No-argument constructor
+  
     public OrderModel() {
     }
 
-    // Getters and Setters
+   
     public int getOrderId() {
         return orderId;
     }

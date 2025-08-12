@@ -23,13 +23,12 @@ public class SearchFoodServelet extends HttpServlet {
         
     	 String keyword = request.getParameter("search");
 
-    	    try {
+    	    try { 
     	        FoodDAO foodDAO = new FoodDAO();
-    	        List<Food> searchResults = foodDAO.searchFoodItems(keyword); // Use your new method
+    	        List<Food> searchResults = foodDAO.searchFoodItems(keyword); 
     	        request.setAttribute("searchResults", searchResults);
     	        request.setAttribute("searchKeyword", keyword);
 
-    	        // Forward to a JSP to display results
     	        RequestDispatcher dispatcher = request.getRequestDispatcher("search-results.jsp");
     	        dispatcher.forward(request, response);
 
@@ -42,6 +41,6 @@ public class SearchFoodServelet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
-        doGet(request, response); // handle POST the same as GET
+        doGet(request, response); 
     }
 }
